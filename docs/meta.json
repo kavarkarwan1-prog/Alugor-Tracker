@@ -2,6 +2,6 @@
   "lastRunAt": null,
   "lastRunSuccess": false,
   "stocksUpdated": 0,
-  "lastErrorAt": null,
-  "lastError": "No scrape has run yet."
+  "lastErrorAt": "2026-07-18T20:36:09.802Z",
+  "lastError": "net::ERR_CONNECTION_REFUSED at https://www.isx-iq.net/isxportal/portal/homepage.html"
 }
