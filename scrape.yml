@@ -1,0 +1,50 @@
+name: Scrape ISX prices
+
+on:
+  schedule:
+    # Every 10 minutes. GitHub's scheduler doesn't guarantee exact timing
+    # (runs can be a few minutes late, especially on the free tier), so
+    # treat this as "roughly every 10 min", not a precise 60s cadence.
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {} # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write # needed so the workflow can commit updated docs/*.json
+
+concurrency:
+  group: scrape-isx
+  cancel-in-progress: false # never cancel a run that's already committing data
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: backend
+        run: npm install
+
+      - name: Run scraper
+        working-directory: backend
+        run: node buildData.js
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "isx-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/stocks.json docs/meta.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update ISX stock data [skip ci]"
+            git push
+          fi
