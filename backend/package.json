@@ -1,0 +1,16 @@
+{
+  "name": "isx-scraper-backend",
+  "version": "2.0.0",
+  "description": "Puppeteer scraper that pulls Iraqi Stock Exchange (ISX) prices and writes them to static JSON files in docs/, served for free via GitHub Pages.",
+  "main": "buildData.js",
+  "scripts": {
+    "scrape": "node buildData.js",
+    "update-config": "node updateConfig.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
