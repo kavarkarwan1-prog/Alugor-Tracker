@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Iraqi Borsa Tracker - Data Feed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; color: #222; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+    a { color: #2F6FED; }
+  </style>
+</head>
+<body>
+  <h1>Iraqi Borsa Tracker - Data Feed</h1>
+  <p>This page hosts the static JSON files the Flutter app polls every 60 seconds:</p>
+  <ul>
+    <li><a href="./stocks.json">stocks.json</a> - stock prices + history</li>
+    <li><a href="./meta.json">meta.json</a> - last scrape status/time</li>
+    <li><a href="./config.json">config.json</a> - currency + commodity prices</li>
+  </ul>
+  <p>Data is refreshed by a scheduled GitHub Actions workflow. See the repo README for setup.</p>
+</body>
+</html>
