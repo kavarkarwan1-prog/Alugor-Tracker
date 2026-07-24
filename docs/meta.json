@@ -2,6 +2,6 @@
   "lastRunAt": null,
   "lastRunSuccess": false,
   "stocksUpdated": 0,
-  "lastErrorAt": "2026-07-24T08:01:06.924Z",
+  "lastErrorAt": "2026-07-24T13:08:11.266Z",
   "lastError": "net::ERR_CONNECTION_REFUSED at https://www.isx-iq.net/isxportal/portal/homepage.html"
 }
