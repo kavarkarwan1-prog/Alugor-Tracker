@@ -1,12 +1,12 @@
 {
   "currency": {
     "usdToIqd": 1310,
-    "updatedAt": "2026-09-29T11:45:32.578Z"
+    "updatedAt": "2026-09-29T17:12:48.528Z"
   },
   "commodities": {
     "goldPerGramUsd": 82.5,
     "silverPerGramUsd": 0.98,
     "diamondPerCaratUsd": 4200,
-    "updatedAt": "2026-09-29T11:45:32.578Z"
+    "updatedAt": "2026-09-29T17:12:48.528Z"
   }
 }
